@@ -12,3 +12,18 @@ def encode(input_string):
             res += character
     return res
 
+def decode(text):
+    alpha='a'
+    alphabet=[]
+    for i in range(26):
+        alphabet.append(alpha)
+        alpha = chr(ord(alpha) + 1)
+    regular_alphabet=alphabet.copy()
+    alphabet.reverse()
+    encode_dict = dict(zip(regular_alphabet,alphabet))
+    decode_dict = dict(zip(alphabet,regular_alphabet))  
+    text=text.replace(' ','')
+    reply=""
+    for i in text:
+        reply=reply+decode_dict[i]
+    return reply 
