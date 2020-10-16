@@ -24,6 +24,7 @@ def decode(text):
     alphabet.reverse()
     encode_dict = dict(zip(regular_alphabet,alphabet))
     decode_dict = dict(zip(alphabet,regular_alphabet))
+    text=text.replace(' ','')
     reply=""
     for i in text:
         reply=reply+decode_dict[i]
